@@ -1,13 +1,13 @@
 {
   "name": "mockflow",
   "version": "1.0.0",
-  "description": "Create mock requests for Dialogflow fulfillment webhooks",
+  "description": "Send mock requests to your Dialogflow v2 fulfillment code",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Scott Odle <sjo@asu.edu>",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "uuid": "^3.3.2"
   }
