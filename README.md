@@ -50,3 +50,6 @@ it("Should respond by saying that my favorite color is blue", async function () 
 
 ## Limitations
 * Only Dialogflow v2 fulfillments are supported. v1 has not been tested and probably won't work.
+
+## Acknowledgements
+* [Carter Kwon](https://github.com/CarterKwon) - Chai integration
