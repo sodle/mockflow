@@ -129,7 +129,7 @@ class MockflowRequest {
     }
     /**
      * Send the request
-     * @returns {Promise}   A Promise for your webhook's response
+     * @returns {Promise}   A Promise of your webhook's response
      */
     async send() {
         return new Promise((resolve, reject) => {
