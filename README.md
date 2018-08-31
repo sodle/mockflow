@@ -22,7 +22,7 @@ mock.intent('My Intent').send().then(json => {
 ```
 
 ## Further customization
-The above example creates a simple intent request using sensible defaults for Dialogflow's [many](https://dialogflow.com/docs/fulfillment#request) parameters. However, you can use the builder's `with...()` functions to set the other parameters.
+The above example creates a simple intent request using sensible defaults for Dialogflow's [many](https://dialogflow.com/docs/fulfillment#request) parameters. However, you can use the request builder's `with...()` methods to set the other parameters.
 ```javascript
 mock.intent('Favorite Color Intent')
     .withParameter('Color', 'blue')
