@@ -1,4 +1,5 @@
 const uuid = require('uuid/v4');
+const expect = require('chai').expect;
 
 /**
  * MockflowRequest builds a request to send to your agent's fulfillment code.
@@ -133,8 +134,8 @@ class MockflowRequest {
      */
     async send() {
         return new Promise((resolve, reject) => {
-            let req = {body: this.request};
-            let res = {json: resolve};
+            let req = { body: this.request };
+            let res = { json: resolve };
             try {
                 this.fulfillment(req, res);
             } catch (error) {
@@ -165,5 +166,27 @@ module.exports = class MockflowAgent {
      */
     intent(intentName) {
         return new MockflowRequest(this.agentName, this.fulfillment, intentName);
+    }
+    /**
+    * Create a MockflowRequest to request a given intent from your agent.
+    * @param {json} json   Response json returned from mockflow
+    * @param {string[]} matching String array of words to look for in the response (case-insensitive)
+    */
+    async existsAndMatches(json, matching) {
+        var keyWords = "";
+        for (var i = 0, len = matching.length; i < len; i++) {
+            if (i + 1 !== matching.length) { //not the last element
+                keyWords += matching[i] + "|";
+            } else {
+                keyWords += matching[i];
+            }
+        }
+
+        let regex = new RegExp(`.*(` + keyWords + `).*`, 'i')
+        if (json.fulfillmentText) {
+            expect(json.fulfillmentText).to.exist.and.match(regex);
+        } else {
+            expect(json.fulfillmentMessages[0].text.text[0]).to.exist.and.match(regex);
+        }
     }
 };
