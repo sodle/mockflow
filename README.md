@@ -6,7 +6,7 @@ Connect to your fulfillment code and send a mock intent request
 ```javascript
 const Mockflow = require('mockflow');
 // Import the Firebase Functions code for your Dialogflow Fulfillment Webhook
-// This assumes that the file is in the same directory as index.js
+// This assumes that the file is in the same directory as index.js - change as necessary
 const app = require('.');
 
 // Initialize Mockflow with your Dialogflow project's name and the webhook handler
