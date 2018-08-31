@@ -131,7 +131,7 @@ class MockflowRequest {
      * Send the request
      * @returns {Promise}   A Promise for your webhook's response
      */
-    async json() {
+    async send() {
         return new Promise((resolve, reject) => {
             let req = {body: this.request};
             let res = {json: resolve};
