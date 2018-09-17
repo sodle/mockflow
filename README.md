@@ -1,6 +1,11 @@
 # Mockflow
 Mockflow lets you send mock requests to your Dialogflow fulfillment code, for offline unit testing.
 
+## Installation
+The following command will install the mockflow package to your project:
+
+```npm install mockflow```
+
 ## The Basics
 Connect to your fulfillment code and send a mock intent request
 ```javascript
